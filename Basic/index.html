@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <!-- bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- v-html : la kieu raw truyen gia tri la tag html cung duoc -->
+    <p id="app" v-html="message"></p>
+
+    <!-- Attribute la them cac thuoc tinh cho class -->
+    <p id="app-two" v-bind:class="className" v-html="message" v-bind:style="styleData"></p>
+
+    <!-- using js expresstion -->
+    <div id="app-three">
+        <p>Tuổi tiếp theo: {{ age + 1 }}</p>
+        <p>Tuổi có là số chẵn: {{ age % 2 == 0 ? 'Chẵn' : 'Lẻ' }}</p>
+    </div>
+
+    <!-- Directives -->
+    <div id="app-four">
+        <p v-if="condition">Tuổi tiếp theo: {{ age + 1 }}</p>
+        <p>Tuổi có là số chẵn: {{ age % 2 == 0 ? 'Chẵn' : 'Lẻ' }}</p>
+    </div>
+
+    <!-- filter -->
+    <div id="five">
+        <h1 class="#">{{ name | strUpperCase | lastFil}}</h1>
+    </div>
+
+    <!-- class-style-binding -->
+    <div id="app-six">
+        <h1 v-bind:class="{ 'text-danger': isRed }">Chào mừng bạn đến với website toidicode.com</h1>
+        <button type="button" v-on:click="toggleClass">Toggle Class</button>
+    </div>
+
+        
+    <script src="../Basic/main.js"></script>
+</body>
+
+</html>
